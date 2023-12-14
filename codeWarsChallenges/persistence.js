@@ -11,25 +11,75 @@ For example (Input --> Output):
 
 
 const persistence = (num) => {
-    let count = 0;
-    let stringified = num.toString().split("")
-    let length = stringified.length
 
-    const multiply = (numbers) => {
-        if (stringified.length < 2) {
-            return count
-        } else {
-            let total = 1;
-            for (let i = 0; i < length; i++) {
-                total = total * stringified[i]
-            }
-            count ++
-            multiply(total)
-        }
+    // set count to 0
+    let count = 0
+
+    // if num = 1 digit, return count at 0
+    if (num < 10) {
+        return count
     }
+
+    const splitAndTimes = (input) => {
+        // break clause
+        if (input < 10) {
+            return
+        }
+        // split number into its digits
+        input = input.toString().split("").map(Number)
+        count++
     
-    multiply(num)
+        // times them together and add 1 to count
+        console.log("trying reduce")
+        
+        let result = input.reduce((a, b) => a * b)
+        
+        if (result) {
+            console.log(result)
+        }
+        // get answer and pass that into the splitAndTimes function
+        splitAndTimes(result)
     
+    }
+
+    // if num = 2 or more digits apply a splitting and timesing function recursively
+    splitAndTimes(num)
+    console.log(`count = ${count}`)
+    return count
 }
 
+
+
+console.log(persistence(39))
+
+
 module.exports = persistence
+
+
+
+
+
+
+
+
+// const persistence = (num) => {
+//     let count = 0;
+//     let stringified = num.toString().split("")
+//     let length = stringified.length
+
+//     const multiply = (numbers) => {
+//         if (stringified.length < 2) {
+//             return count
+//         } else {
+//             let total = 1;
+//             for (let i = 0; i < length; i++) {
+//                 total = total * stringified[i]
+//             }
+//             count ++
+//             multiply(total)
+//         }
+//     }
+    
+//     multiply(num)
+    
+// }
