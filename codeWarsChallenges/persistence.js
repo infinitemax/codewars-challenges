@@ -27,16 +27,13 @@ const persistence = (num) => {
         }
         // split number into its digits
         input = input.toString().split("").map(Number)
+        
+        // it's not ideal that the count is updated here, requiring me to nest the function, but it works for now!
         count++
     
-        // times them together and add 1 to count
-        console.log("trying reduce")
-        
-        let result = input.reduce((a, b) => a * b)
-        
-        if (result) {
-            console.log(result)
-        }
+        // times them together and add 1 to count        
+        let result = input.reduce((a, b) => a * b)   
+
         // get answer and pass that into the splitAndTimes function
         splitAndTimes(result)
     
@@ -44,7 +41,7 @@ const persistence = (num) => {
 
     // if num = 2 or more digits apply a splitting and timesing function recursively
     splitAndTimes(num)
-    console.log(`count = ${count}`)
+
     return count
 }
 
