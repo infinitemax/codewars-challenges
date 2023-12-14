@@ -46,3 +46,13 @@ const getNum2 = (line) => {
         }
     }
 }
+
+
+// part 2
+/*
+check whether line contains one of the written numbers using indexOf()
+if it does, the location of the first/last number
+based on which is closer to the beginning or end, return the answer
+
+gosh, this is hard!
+*/
