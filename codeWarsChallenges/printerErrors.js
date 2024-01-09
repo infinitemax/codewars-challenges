@@ -17,7 +17,7 @@ function printerError(s) {
 
     }
 
-    console.log(numerator + "/" + denominator)
+    // console.log(numerator + "/" + denominator)
     return numerator + "/" + denominator
 
 }
